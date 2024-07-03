@@ -3,14 +3,14 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import classes from "./CartButton.module.css";
-import { cartActions } from "../../store/cart";
+import { uiActions } from "../../store/ui";
 
 const CartButton = (props) => {
   const dispatch = useDispatch();
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
 
   const onClick = () => {
-    dispatch(cartActions.isOpen());
+    dispatch(uiActions.isCartOpen());
   };
 
   return (
